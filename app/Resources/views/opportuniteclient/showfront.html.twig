@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="text-center p-5 shadow">
+                        <h2 class="mb-3">Postuler a cette
+                            <span class="text-color">Opportunite</span></h2>
+                        <ul class="list-unstyled mb-4">
+                            <li>Adresse:  {{ opportunite.addresse }}</li>
+                            <li>Nombre De Places:  {{ opportunite.nbPlace }}</li>
+                            <li>Date : {% if opportunite.date %}{{ opportunite.date|date('Y-m-d') }}{% endif %}</li>
+                            <li>Description: {{ opportunite.descriptionOpportunite }}</li>
+                        </ul>
+                        {% if test %}
+                            <a> vous avez déja postuler dans cette opportunité</a>
+                        {% else %}
+                            <a href="{{ path('Postuler', { 'id': opportunite.id }) }}" target="_blank" class="btn btn-main">Postuler</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

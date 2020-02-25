@@ -1,0 +1,48 @@
+opportunite_homepage:
+    path:     /
+    defaults: { _controller: OpportuniteBundle:Default:index }
+categorie_new:
+    path:     /new
+    defaults: { _controller: OpportuniteBundle:categorie:new }
+categorie_edit:
+    path:     /edit/{id}
+    defaults: { _controller: OpportuniteBundle:categorie:edit }
+categorie_show:
+    path:     /show/{id}
+    defaults: { _controller: OpportuniteBundle:categorie:show }
+categorie_index:
+    path:     /index
+    defaults: { _controller: OpportuniteBundle:categorie:index }
+categorie_delete:
+    path:     /delete/{id}
+    defaults: { _controller: OpportuniteBundle:categorie:delete }
+opportunite_new:
+    path:     /new1
+    defaults: { _controller: OpportuniteBundle:opportunite:new }
+opportunite_show:
+    path:     /show1/{id}
+    defaults: { _controller: OpportuniteBundle:opportunite:show }
+opportunite_edit:
+    path:     /edit1/{id}
+    defaults: { _controller: OpportuniteBundle:opportunite:edit }
+opportunite_delete:
+    path:     /delete1/{id}
+    defaults: { _controller: OpportuniteBundle:opportunite:delete }
+opportunite_index:
+    path:     /index1
+    defaults: { _controller: OpportuniteBundle:opportunite:index }
+Postuler:
+    path:     /postuler/{id}
+    defaults: { _controller: OpportuniteBundle:postulation:postulation }
+opportuniteadd_index:
+    path:     /indexadd
+    defaults: { _controller: OpportuniteBundle:opportunite:indexadd }
+opportuniteclient_new:
+    path:     /newoppclient
+    defaults: { _controller: OpportuniteBundle:opportunite:newclient }
+opportunite_approuver:
+    path:     /approuver/{id}
+    defaults: { _controller: OpportuniteBundle:opportunite:approuver }
+opportunite_sendmail:
+    path:     /sendmail
+    defaults: { _controller: OpportuniteBundle:opportunite:mail }

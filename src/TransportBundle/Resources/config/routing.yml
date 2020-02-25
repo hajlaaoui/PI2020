@@ -1,0 +1,13 @@
+transport_homepage:
+    path:     /
+    defaults: { _controller: TransportBundle:Default:index }
+Affiche:
+    path:     /Affiche
+    defaults: { _controller: "TransportBundle:Transport:Affiche" }
+Admin:
+    path:     /Admin
+    defaults: { _controller: "TransportBundle:TransportAdmin:index" }
+Affiche_Admin:
+    path:     /AfficheAdmin
+    defaults: { _controller: "TransportBundle:TransportAdmin:AfficheAdmin" }
+

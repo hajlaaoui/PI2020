@@ -1,0 +1,109 @@
+{% extends 'base2.html.twig' %}
+{% block contenu %}
+   <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <center><input type="text" id="search" placeholder="CHERCHER Transport..."></center>
+  <center>  <h1>Transport list</h1></center>
+
+   <center> <table class="table table-striped jambo_table bulk_action" >
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Moyen</th>
+            <th>Destination</th>
+
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ticket in tickets %}
+            <tr>
+                {# <td><a href="{{ path('ticket_show', { 'id': ticket.id }) }}">{{ ticket.id }}</a></td>#}
+                <td>{{ ticket.id }}</td>
+                <td>{{ ticket.Moyen }}</td>
+                <td>{{ ticket.Destination }}</td>
+                {#<td>{% if ticket.dateTicket  %}{{ ticket.dateTicket|date('Y-m-d H:i:s') }}{% endif %}</td>#}
+                {#  <td>
+                      <ul>
+                          <li>
+                              <a href="{{ path('ticket_show', { 'id': ticket.id }) }}">show</a>
+                          </li>
+                          <li>
+                              <a href="{{ path('ticket_edit', { 'id': ticket.id }) }}">edit</a>
+                          </li>
+                      </ul>
+                  </td>#}
+           </tr>
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found == 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script>
+        {% endfor %}
+        </tbody>
+    </table></center>
+
+    {# <ul>
+         <li>
+             <a href="{{ path('ticket_new') }}">Create a new ticket</a>
+         </li>
+     </ul>#}
+
+
+    {#<h1>Ticket</h1>
+
+    <table >
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ ticket.id }}</td>
+        </tr>
+        <tr>
+            <th>Moyen</th>
+            <td>{{ ticket.moyen }}</td>
+        </tr>
+        <tr>
+            <th>Reportermail</th>
+            <td>{{ ticket.destination }}</td>
+        </tr>
+
+      {#  <tr>
+            <th>Dateticket</th>
+            <td>{% if ticket.dateTicket %}{{ ticket.dateTicket|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ticketAdmin_index') }}">Back to the list</a>
+        </li>
+
+        <td><a href="{{ path('ticketAdmin_delete',{'id':ticket.id}) }}"> delete</a></td>
+    </ul>#}
+{% endblock %}
+
+
+

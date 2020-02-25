@@ -1,0 +1,109 @@
+{% extends 'base2.html.twig' %}
+
+{% block contenu %}
+
+    <h1>Opportunites list</h1>
+    <br><br><br>
+
+
+
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Listes des Opportunité</h2>
+                    
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Settings 1</a>
+                                <a class="dropdown-item" href="#">Settings 2</a>
+                            </div>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h3 class="box-title">Trier par </h3>
+                    <button class="btn btn-success" > {{ knp_pagination_sortable(pagination, 'Description', 'o.descriptionOpportunite') }}</button>
+                    <button class="btn btn-success"> {{ knp_pagination_sortable(pagination, 'Nombre de places','o.nbPlace') }}</button>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+
+                            <div class="navigation">
+                                <div class="container">
+                                    <br>
+                                    <h3 class="box-title">Filtrer par</h3>
+                                    {{ knp_pagination_filter(pagination,{'o.descriptionOpportunite':'Description',' opportunite.nbPlace ':'Nombre de places'}) }}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>editez vos données</p>
+
+                    <!-- start project list -->
+                    <table class="table table-striped projects">
+                        <thead>
+
+                        <tr>
+                            <th style="width: 1%">#</th>
+                            <th style="width: 20%">Email</th>
+                            <th>Description</th>
+                            <th>categorie</th>
+                            <th>date</th>
+                            <th>Etat</th>
+                            <th>Nombre de place</th>
+                            <th>Image</th>
+                            <th style="width: 20%">#Edit</th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        {% for opportunite in pagination %}
+                        <tr>
+                            <td><a href="{{ path('opportunite_show', { 'id': opportunite.id }) }}">{{ opportunite.id }}</a></td>
+                            <td>{{ opportunite.addresse }}</td>
+                            <td>
+                                {{ opportunite.descriptionOpportunite }}
+                            </td>
+                            <td>{{ opportunite.categorie.nomCategorie }}</td>
+                            <td>{% if opportunite.date %}{{ opportunite.date|date('Y-m-d') }}{% endif %}</td>
+
+                            <td>{% if opportunite.etat==1 %}Approuvée{% else %}
+                                    <a class="btn btn-success btn-xs" href="{{ path('opportunite_approuver', { 'id': opportunite.id }) }}">Approuver</a>
+                                {% endif %}</td>
+                            <td>{{ opportunite.nbPlace }}</td>
+                            <td> <a><img width="100px" height="100px" src="{{ asset('uploads/images/opportunites/') }}{{ opportunite.image }}"></a></td>
+                            <td>
+                                <a href="{{ path('opportunite_show', { 'id': opportunite.id }) }}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                                <a href="{{ path('opportunite_edit', { 'id': opportunite.id }) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                <a href="{{ path('opportunite_delete', { 'id': opportunite.id }) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            </td>
+                        </tr>
+
+
+
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {{ knp_pagination_render(pagination) }}
+                    <a href="{{ path('opportunite_new') }}" class="btn btn-success btn-xs"><i class="fa-baby-carriage"></i> créer une new opportuniute </a>
+                    <!-- end project list -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

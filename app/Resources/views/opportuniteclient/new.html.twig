@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+
+    <section class="section cta">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="text-center">
+                        <span class="h6 letter-spacing text-white"> </span>
+                        <h2 class="text-lg mt-4 mb-5 text-white">
+                            Proposez votre <span class="text-color">{# best #}</span>Opportunités
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="divider mb-3"></div>
+                    <br><br>
+                    <div class="text-center p-5 shadow">
+                        <h2 class="mb-3">Proposez votre<span class="text-color"> Opportunite</span></h2>
+                        <h4 class="mb-3">Veuillez remplir ce formulaire</h4>
+                        {{ form_start(formclient) }}
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.addresse) }}</label>
+                            {{ form_widget(formclient.addresse,{'attr':{'class': 'form-control adresse','id': 'middle-name'}}) }}
+                            <span id="error-adresse"></span>
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.nbPlace) }}</label>
+                            {{ form_widget(formclient.nbPlace,{'attr':{'class': 'form-control nbPlace','id': 'middle-name'}}) }}
+                            <span id="error-nbPlace"></span>
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.image) }}</label>
+                            {{ form_widget(formclient.image,{'attr':{'class': 'form-control image','id': 'middle-name'}}) }}
+                            <span id="error-image"></span>
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.date) }}</label>
+                            {{ form_widget(formclient.date,{'attr':{'class': 'form-control date','id': 'middle-name'}}) }}
+                            <span id="error-date"></span>
+                        </div>
+
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.descriptionOpportunite) }}</label>
+                            {{ form_widget(formclient.descriptionOpportunite,{'attr':{'class': 'form-control description','id': 'middle-name'}}) }}
+                            <span id="error-description"></span>
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label>{{ form_label(formclient.categorie) }}</label>
+                            {{ form_widget(formclient.categorie,{'attr':{'class': 'form-control categorie','id': 'middle-name'}}) }}
+                            <span id="error-categorie"></span>
+                        </div>
+
+                        <input id="valider" type="submit" value="Valider" class="btn btn-main"/>
+                        {{ form_end(formclient) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('#valider').click(function () {
+            valid = true;
+            if ($('.nbPlace').val() == "") {
+                $('#error-nbPlace').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.nbPlace').val() < 1) {
+                $('#error-nbPlace').text('Nombre de places invalide').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.adresse').val() == "") {
+                $('#error-adresse').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.description').val() == "") {
+                $('#error-description').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            return valid;
+        })
+
+    </script>
+
+{% endblock %}

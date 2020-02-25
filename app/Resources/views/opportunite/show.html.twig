@@ -1,0 +1,110 @@
+{% extends 'base2.html.twig' %}
+
+{% block contenu %}
+    <h1>Opportunite</h1>
+
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+            <div class="dashboard_graph">
+
+                <div class="row x_title">
+                    <div class="col-md-4">
+                        <h3>Affichage de l'opportunité</h3>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-sm-8 " style="text-align: center">
+                    <a><img height="300px" src="{{ asset('uploads/images/opportunites/') }}{{ opportunite.image }}"></a>
+                </div>
+
+                <div class="col-md-3 col-sm-3  bg-white">
+                    <div class="x_title">
+
+                        <h2>Détailles</h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 ">
+                        <div>
+                            <p>Id : {{ opportunite.id }}</p>
+                            <div class="">
+                                <div class="progress progress_sm" style="width: 76%;">
+                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Adresse : {{ opportunite.addresse }}</p>
+                            <div class="">
+                                <div class="progress progress_sm" style="width: 76%;">
+                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 ">
+                        <div>
+                            <p>NbPlace : {{ opportunite.nbPlace }} </p>
+                            <div class="">
+                                <div class="progress progress_sm" style="width: 76%;">
+                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Date : {% if opportunite.date %}{{ opportunite.date|date('Y-m-d') }}{% endif %}</p>
+                            <div class="">
+                                <div class="progress progress_sm" style="width: 76%;">
+                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Description :{{ opportunite.descriptionOpportunite }}</p>
+                            <div class="">
+                                <div class="progress progress_sm" style="width: 76%;">
+                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <table class="table table-striped projects">
+        <thead>
+
+        <tr>
+            <th>Nom d'utilisateur</th>
+            <th>#</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+            <tr>
+                <td> {% for postulation in postulations %}
+                        <li>{{ postulation.FosUser }}</li>
+                    {% endfor %}</td>
+                <td>
+                    <a href="{{ path('opportunite_show', { 'id': opportunite.id }) }}" class="btn btn-outline-dark"><i class="fa-baby-carriage"></i> Affecter </a>
+                </td>
+        </tbody>
+    </table>
+    <a  class="btn btn-info btn-xs" class="fa fa-pencil" href="{{ path('opportuniteadd_index') }}">Back to the list</a>
+    <br><a class="btn btn-success btn-xs" href="{{ path('opportunite_edit', { 'id': opportunite.id }) }}">Edit</a>
+{% endblock %}

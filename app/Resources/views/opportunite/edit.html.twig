@@ -1,0 +1,112 @@
+{% extends 'base2.html.twig' %}
+
+{% block contenu %}
+    <h1>Opportunite edit</h1>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Editer Opportunité</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content" style="display: block;">
+
+                    <br>
+                    {{ form_start(edit_form) }}
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.addresse) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.addresse,{'attr':{'class': 'form-control adresse','id': 'adresse'}}) }}</div>
+                            <span id="error-adresse"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.nbPlace) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.nbPlace,{'attr':{'class': 'form-control nbPlace','id': 'nbPlace'}}) }}</div>
+                            <span id="error-nbPlace"></span>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.image) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.image,{'attr':{'class': 'form-control image','id': 'image'}}) }}</div>
+                            <span id="error-image"></span>
+                        </div>
+                    </div>
+
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.date) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.date,{'attr':{'class': 'form-control date','id': 'middle-name'}}) }}</div>
+                            <span id="error-date"></span>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.descriptionOpportunite) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.descriptionOpportunite,{'attr':{'class': 'form-control description','id': 'description'}}) }}</div>
+                            <span id="error-description"></span>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">{{ form_label(edit_form.categorie) }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>{{ form_widget(edit_form.categorie,{'attr':{'class': 'form-control categorie','id': 'categorie'}}) }}</div>
+                            <span id="error-categorie"></span>
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+                        <div class="col-md-6 col-sm-6 offset-md-3">
+                            <a href="{{ path('opportuniteadd_index') }}" class="btn btn-primary">Retour à la liste</a>
+                            <input id="valider" type="submit" class="btn btn-success" value="Edit" />
+                        </div>
+                    </div>
+
+                    {{ form_end(edit_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('#valider').click(function () {
+            valid = true;
+            if ($('.nbPlace').val() == "") {
+                $('#error-nbPlace').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.nbPlace').val() < 1) {
+                $('#error-nbPlace').text('Nombre de places invalide').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.adresse').val() == "") {
+                $('#error-adresse').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            if ($('.description').val() == "") {
+                $('#error-description').text('Veuillez remplir ce champ').css('color', 'red').fadeIn();
+                valid = false;
+            }
+            return valid;
+        })
+
+    </script>
+{% endblock %}

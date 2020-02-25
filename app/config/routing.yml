@@ -1,0 +1,25 @@
+opportunite_postulation:
+    resource: "@OpportuniteBundle/Controller/postulationController.php"
+    type:     annotation
+
+opportunite_opportunite:
+    resource: "@OpportuniteBundle/Controller/opportuniteController.php"
+    type:     annotation
+
+opportunite_categorie:
+    resource: "@OpportuniteBundle/Controller/categorieController.php"
+    type:     annotation
+
+opportunite:
+    resource: "@OpportuniteBundle/Resources/config/routing.yml"
+    prefix:   /O
+
+transport:
+    resource: "@TransportBundle/Resources/config/routing.yml"
+    prefix:   /T
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
