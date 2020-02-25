@@ -16,6 +16,7 @@ use MartinGeorgiev\SocialPost\Publisher;
  */
 class categorieController extends Controller
 {
+    //
     /**
      * Lists all categorie entities.
      *
