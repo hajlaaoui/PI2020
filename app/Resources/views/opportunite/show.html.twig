@@ -97,12 +97,15 @@
         <tbody>
 
             <tr>
-                <td> {% for postulation in postulations %}
-                        <li>{{ postulation.FosUser }}</li>
-                    {% endfor %}</td>
+                {% for postulation in postulations %}
                 <td>
-                    <a href="{{ path('opportunite_show', { 'id': opportunite.id }) }}" class="btn btn-outline-dark"><i class="fa-baby-carriage"></i> Affecter </a>
+                        <li>{{ postulation.FosUser }}</li>
+                    </td>
+                <td>
+                    <a href="{{ path('Affecter_sendmail', { 'id': postulation.id }) }}" class="btn btn-outline-dark"><i class="fa-baby-carriage"></i> Affecter </a>
                 </td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
     <a  class="btn btn-info btn-xs" class="fa fa-pencil" href="{{ path('opportuniteadd_index') }}">Back to the list</a>

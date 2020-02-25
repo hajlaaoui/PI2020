@@ -110,38 +110,6 @@ class opportuniteController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($opportunite);
             $em->flush();
-            //Envoi d'un mail:
-            // Create the Transport
-            $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-                ->setUsername('hajlaouijihed10@gmail.com')
-                ->setPassword('rwjoteqmmpkmewem');
-
-
-           // You could alternatively use a different transport such as Sendmail:
-
-            // Sendmail
-            //$transport = new \Swift_SendmailTransport('/usr/sbin/sendmail -bs');
-
-
-            // Create the Mailer using your created Transport
-            $mailer = new \Swift_Mailer($transport);
-            $user = $em->getRepository('AppBundle:User')->findAll();
-            $mails=array();
-            $mails=array();
-            // Create a message
-            $message = (new Swift_Message('Reply for your request'))
-                ->setFrom('hajlaouijihed10@gmail.com')
-            //    ->setTo('jihed.hajlaoui@esprit.tn')
-                ->setBody('Dear ' .$opportunite->getDescriptionOpportunite(). ', Your request will be treated within 24 hours.');
-            foreach ($user as $u)
-            {
-                array_push($mails,$u->getEmail());
-            }
-            $message->setTo($mails);
-            // Send the message
-            $mailer->send($message);
-            ///////////////////
-
             return $this->redirectToRoute('opportunite_index', array('id' => $opportunite->getId()));
         }
 
@@ -149,6 +117,46 @@ class opportuniteController extends Controller
             'opportunite' => $opportunite,
             'formclient' => $form->createView(),
         ));
+    }
+
+    public function AffecterAction($id){
+        //Envoi d'un mail:
+        // Create the Transport
+        $em = $this->getDoctrine()->getManager();
+        $postulation = $em->getRepository('OpportuniteBundle:postulation')->find($id);
+        $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
+            ->setUsername('hajlaouijihed10@gmail.com')
+            ->setPassword('rwjoteqmmpkmewem');
+
+
+        // You could alternatively use a different transport such as Sendmail:
+
+        // Sendmail
+        //$transport = new \Swift_SendmailTransport('/usr/sbin/sendmail -bs');
+
+
+
+        // Create the Mailer using your created Transport
+        $mailer = new \Swift_Mailer($transport);
+
+        $mails = array();
+        $mail = $postulation->getFosUser()->getEmail();
+        //$mails=array();
+        array_push($mails,$mail);
+        // Create a message
+        $message = (new Swift_Message('Reply for your request'))
+            ->setFrom('hajlaouijihed10@gmail.com')
+            //    ->setTo('jihed.hajlaoui@esprit.tn')
+            ->setBody('Vous êtes affecté à l\'opportunité : ' .$postulation->getOpportunite()->getDescriptionOpportunite(). ', Félicitations !.');
+        /*foreach ($user as $u)
+        {
+            array_push($mails,$u->getEmail());
+        }*/
+        $message->setTo($mails);
+        // Send the message
+        $mailer->send($message);
+        ///////////////////
+        return $this->redirectToRoute('opportunite_show',array('id'=>$postulation->getOpportunite()->getId()));
     }
 
     /*public function newclientAction(Request $request)
@@ -177,6 +185,8 @@ class opportuniteController extends Controller
         $em = $this->getDoctrine()->getManager()->getRepository('OpportuniteBundle:opportunite')->approuver($opportunite->getId());
         //Envoi d'un mail:
         // Create the Transport
+        //Envoi d'un mail:
+        // Create the Transport
         $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
             ->setUsername('hajlaouijihed10@gmail.com')
             ->setPassword('rwjoteqmmpkmewem');
@@ -190,13 +200,14 @@ class opportuniteController extends Controller
 
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
-        $user =$this->getDoctrine()->getManager()->getRepository('AppBundle:User')->findAll();
+        $user = $em->getRepository('AppBundle:User')->findAll();
+        $mails=array();
         $mails=array();
         // Create a message
         $message = (new Swift_Message('Reply for your request'))
             ->setFrom('hajlaouijihed10@gmail.com')
             //    ->setTo('jihed.hajlaoui@esprit.tn')
-            ->setBody('notre opportunite est un offre de : ' .$opportunite->getDescriptionOpportunite(). ', postuler avant '.$opportunite->getDate());
+            ->setBody('Bonsoir ' .$opportunite->getDescriptionOpportunite(). ', Your request will be treated within 24 hours.');
         foreach ($user as $u)
         {
             array_push($mails,$u->getEmail());

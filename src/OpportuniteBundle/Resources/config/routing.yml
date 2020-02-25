@@ -46,3 +46,6 @@ opportunite_approuver:
 opportunite_sendmail:
     path:     /sendmail
     defaults: { _controller: OpportuniteBundle:opportunite:mail }
+Affecter_sendmail:
+    path:     /Affecter/{id}
+    defaults: { _controller: OpportuniteBundle:opportunite:Affecter }

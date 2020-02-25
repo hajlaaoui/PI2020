@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="" />
+    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/opportunite/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/opportunite/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OpportuniteBundle/Controller/opportuniteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/OpportuniteBundle/Controller/opportuniteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OpportuniteBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/OpportuniteBundle/Resources/config/routing.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +18,9 @@
     <execution>
       <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="1574b1cc-3b80-4c36-809a-5759fec7637b" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -90,6 +98,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XNfiFu4NR1J4fXydUqnjZy8hXb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Final/wordfriendship" />
@@ -168,11 +177,31 @@
       <workItem from="1582080500270" duration="12703000" />
       <workItem from="1582206383935" duration="14113000" />
       <workItem from="1582277544614" duration="54375000" />
-      <workItem from="1582423116618" duration="55626000" />
+      <workItem from="1582423116618" duration="55644000" />
+      <workItem from="1582592879388" duration="645000" />
+      <workItem from="1582622168519" duration="4381000" />
+      <workItem from="1582627132654" duration="270000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
   </component>
 </project>
