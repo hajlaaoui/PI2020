@@ -107,6 +107,12 @@ class opportuniteController extends Controller
         $form = $this->createForm('OpportuniteBundle\Form\opportuniteType', $opportunite);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $image=$opportunite->getImage();
+            $imageName = md5(uniqid()).'.'.$image ->guessExtension();
+            $image->move(
+                $this->getParameter('imageopp_directory'),$imageName
+            );
+            $opportunite->setImage($imageName);
             $em = $this->getDoctrine()->getManager();
             $em->persist($opportunite);
             $em->flush();
@@ -200,7 +206,7 @@ class opportuniteController extends Controller
 
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
-        $user = $em->getRepository('AppBundle:User')->findAll();
+        $user = $this->getDoctrine()->getManager()->getRepository('AppBundle:User')->findAll();
         $mails=array();
         $mails=array();
         // Create a message

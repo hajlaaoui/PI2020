@@ -17,7 +17,7 @@
                         {% if test %}
                             <a> vous avez déja postuler dans cette opportunité</a>
                         {% else %}
-                            <a href="{{ path('Postuler', { 'id': opportunite.id }) }}" target="_blank" class="btn btn-main">Postuler</a>
+                            {% if opportunite.nbPlace == 0 %}<p style="color: red">Saturé</p>{% else %}<a href="{{ path('Postuler', { 'id': opportunite.id }) }}" target="_blank" class="btn btn-main">Postuler</a>{% endif %}
                         {% endif %}
 
                     </div>

@@ -78,10 +78,11 @@
                                     <li><a href="{{ path('opportuniteadd_index') }}">Offres</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-table"></i> Dons <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-credit-card"></i> Dons <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="tables.html">Tables</a></li>
-                                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                                    <li><a href="{{ path('secteur_index') }}">Secteurs</a></li>
+                                    <li><a href="{{ path('donfinancier_index') }}">Dons Financiers</a></li>
+                                    <li><a href="{{ path('donmateriel_index') }}">Dons Matériels</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-bar-chart-o"></i>Transport <span class="fa fa-chevron-down"></span></a>
@@ -178,53 +179,22 @@
                                 <span class="badge bg-green">6</span>
                             </a>
                             <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="{{ asset("back/images/img.jpg") }}" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
+                                {% if notifications is defined %}
+                                {% for n in notifications %}
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="{{ asset("back/images/img.jpg") }}" alt="Profile Image" /></span>
+                                            <span>
+                          <span>{{ n.title }}</span>
+                          <span class="time">{{ n.date|date("d/m/Y") }}</span>
                         </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            <span class="message">
+                          {{ n.description }}
                         </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="{{ asset('back/images/img.jpg') }}" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="{{ asset('back/images/img.jpg') }}" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="{{ asset('back/images/img.jpg') }}" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                        </span>
-                                    </a>
-                                </li>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
                                 <li class="nav-item">
                                     <div class="text-center">
                                         <a class="dropdown-item">

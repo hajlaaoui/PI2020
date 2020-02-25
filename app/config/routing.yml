@@ -18,6 +18,26 @@ transport:
     resource: "@TransportBundle/Resources/config/routing.yml"
     prefix:   /T
 
+dons_demande:
+    resource: "@DonsBundle/Controller/DemandeController.php"
+    type:     annotation
+
+dons_donmateriel:
+    resource: "@DonsBundle/Controller/DonmaterielController.php"
+    type:     annotation
+
+dons_donfinancier:
+    resource: "@DonsBundle/Controller/DonfinancierController.php"
+    type:     annotation
+
+dons_secteur:
+    resource: "@DonsBundle/Controller/SecteurController.php"
+    type:     annotation
+
+dons:
+    resource: "@DonsBundle/Resources/config/routing.yml"
+    prefix:   /D
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

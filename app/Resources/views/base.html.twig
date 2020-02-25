@@ -57,12 +57,11 @@
                     <li class="nav-item"><a class="nav-link" href="service.html">Reclamations</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">evénements</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">Faites un don </a>
+                        <a class="nav-link dropdown-toggle" href="{# #}" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">Don </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="blog.html">Blog Grid</a></li>
-                            <li><a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a></li>
-                            <li><a class="dropdown-item" href="blog-single.html">Blog Details</a></li>
+                            <li><a class="dropdown-item" href="{% if app.user %}{{ path('donfinancier_new') }}{% else %}{{ path('fos_user_security_login') }}{% endif %}">Don Financer</a></li>
+                            <li><a class="dropdown-item" href="{% if app.user %}{{ path('donmateriel_indexfront') }}{% else %}{{ path('fos_user_security_login') }}{% endif %}">Don Materiel</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="service.html">Articles</a></li>

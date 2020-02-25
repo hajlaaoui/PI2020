@@ -22,8 +22,8 @@ class AppKernel extends Kernel
             new OpportuniteBundle\OpportuniteBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-
-
+            new DonsBundle\DonsBundle(),
+            new SBC\NotificationsBundle\NotificationsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
