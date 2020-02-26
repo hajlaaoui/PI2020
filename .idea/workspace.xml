@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransportBundle/TransportBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportBundle/TransportBundle.php" afterDir="false" />
-    </list>
+    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,7 @@
       <workItem from="1582622168519" duration="4381000" />
       <workItem from="1582627132654" duration="510000" />
       <workItem from="1582677333761" duration="735000" />
-      <workItem from="1582686956132" duration="655000" />
+      <workItem from="1582686956132" duration="903000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <created>1582627640395</created>
@@ -202,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582648127509</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Jihed commit">
+      <created>1582687683111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582687683111</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Maryem commit">
+      <created>1582687804089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582687804089</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +234,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
     <MESSAGE value="Jihed commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jihed commit" />
+    <MESSAGE value="Maryem commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maryem commit" />
   </component>
 </project>
