@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="" />
+    <list default="true" id="bc7b63fc-b800-4417-a9e2-6eaa190ebdd0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransportBundle/TransportBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportBundle/TransportBundle.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +103,9 @@
   <component name="ProjectId" id="1XNfiFu4NR1J4fXydUqnjZy8hXb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -181,6 +186,7 @@
       <workItem from="1582622168519" duration="4381000" />
       <workItem from="1582627132654" duration="510000" />
       <workItem from="1582677333761" duration="735000" />
+      <workItem from="1582686956132" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <created>1582627640395</created>
