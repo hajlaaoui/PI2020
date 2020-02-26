@@ -17,4 +17,8 @@ class TransportController extends Controller
             'tickets' => $tickets,
         ));
     }
+    public function nneAction()
+    {
+        //////
+    }
 }
